@@ -1,0 +1,1403 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从《天工开物》到杂交水稻 · 一场四百年的稻作对话</title>
+<style>
+:root{
+  --paper:#f6f0e2;
+  --paper-2:#efe5cf;
+  --paper-3:#e8dcc0;
+  --ink:#2a2419;
+  --ink-soft:#5d5342;
+  --ink-faint:#8a7d66;
+  --line:#d8caa8;
+  --seal:#a83a2a;
+  --seal-deep:#8c2d20;
+  --jade:#3f6b4a;
+  --jade-deep:#2e5138;
+  --gold:#a67c2e;
+  --shadow:0 10px 30px rgba(60,45,20,.10);
+  --serif:"Noto Serif SC","Songti SC","STSong","SimSun",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(166,124,46,.06), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(63,107,74,.05), transparent 45%);
+}
+::selection{background:rgba(168,58,42,.2);}
+a{color:var(--seal);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+img,svg{max-width:100%;}
+
+/* ---------- 顶部导航 ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,240,226,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1180px;margin:0 auto;padding:.55rem 1.25rem;
+  display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;
+}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:1.02rem;letter-spacing:.06em;color:var(--ink);white-space:nowrap;}
+.nav-brand .dot{color:var(--seal);}
+.nav-links{display:flex;gap:.25rem;flex-wrap:wrap;margin-left:auto;}
+.nav-links a{
+  font-size:.86rem;color:var(--ink-soft);padding:.3rem .7rem;border-radius:999px;
+  transition:background .2s,color .2s;text-decoration:none;
+}
+.nav-links a:hover{background:var(--paper-3);color:var(--ink);}
+.nav-links a.active{background:var(--ink);color:var(--paper);}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  max-width:1180px;margin:0 auto;padding:4.2rem 1.25rem 3rem;
+  display:grid;grid-template-columns:1.35fr 1fr;gap:2.5rem;align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.85rem;letter-spacing:.25em;color:var(--seal);
+  border:1px solid rgba(168,58,42,.4);padding:.3rem .9rem;border-radius:999px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:800;
+  font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.25;margin:1.3rem 0 .9rem;
+  letter-spacing:.02em;
+}
+.hero h1 em{font-style:normal;color:var(--seal);position:relative;}
+.hero p.lead{font-size:1.06rem;color:var(--ink-soft);max-width:34em;margin:0 0 1.6rem;}
+.hero-meta{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.88rem;color:var(--ink-faint);}
+.hero-meta b{color:var(--ink);font-family:var(--serif);font-size:1.15rem;display:block;}
+.hero-art{position:relative;}
+.seal{
+  position:absolute;top:-14px;right:-8px;width:64px;height:64px;
+  background:var(--seal);color:var(--paper);border-radius:8px;
+  display:grid;place-items:center;text-align:center;
+  font-family:var(--serif);font-weight:700;font-size:.82rem;line-height:1.15;
+  box-shadow:var(--shadow);transform:rotate(6deg);
+}
+
+/* ---------- 通用版式 ---------- */
+section{scroll-margin-top:72px;}
+.wrap{max-width:1180px;margin:0 auto;padding:3rem 1.25rem;}
+.sec-head{margin-bottom:2rem;}
+.sec-no{
+  font-family:var(--serif);font-size:.9rem;letter-spacing:.3em;color:var(--seal);
+  display:flex;align-items:center;gap:.8rem;
+}
+.sec-no::after{content:"";flex:0 0 56px;height:1px;background:var(--seal);opacity:.5;}
+.sec-head h2{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.35rem);margin:.55rem 0 .4rem;font-weight:800;}
+.sec-head p{color:var(--ink-soft);max-width:46em;margin:0;}
+.band{border-top:1px solid var(--line);}
+.band-alt{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+/* ---------- 序章时间卡 ---------- */
+.era-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.era{
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.4rem;
+  position:relative;box-shadow:var(--shadow);
+}
+.era .yr{font-family:var(--serif);font-size:1.9rem;font-weight:800;color:var(--seal);}
+.era h3{margin:.4rem 0 .5rem;font-family:var(--serif);font-size:1.12rem;}
+.era p{margin:0;font-size:.92rem;color:var(--ink-soft);}
+.era.jade .yr{color:var(--jade);}
+.era::before{
+  content:"";position:absolute;left:0;top:1.5rem;bottom:1.5rem;width:4px;border-radius:4px;
+  background:var(--seal);opacity:.8;
+}
+.era.jade::before{background:var(--jade);}
+.era.gold::before{background:var(--gold);}
+.era.gold .yr{color:var(--gold);}
+
+/* ---------- 古籍引用卡 ---------- */
+.classic-card{
+  background:linear-gradient(180deg,#fbf6e9,#f4ecd6);
+  border:1px solid var(--line);border-left:5px solid var(--ink);
+  border-radius:10px;padding:1.4rem 1.6rem;margin:1.1rem 0;box-shadow:var(--shadow);
+}
+.classic-card .src{font-size:.78rem;color:var(--ink-faint);letter-spacing:.12em;margin-bottom:.7rem;}
+.classic-card blockquote{
+  margin:0;font-family:var(--serif);font-size:1.06rem;line-height:2;color:var(--ink);
+}
+.classic-card .note{margin:.9rem 0 0;font-size:.92rem;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:.8rem;}
+.tag-tech{
+  display:inline-block;font-size:.76rem;background:rgba(168,58,42,.1);color:var(--seal-deep);
+  padding:.12rem .6rem;border-radius:4px;margin-right:.4rem;font-weight:600;
+}
+
+/* ---------- 七步流程 ---------- */
+.stepper{
+  display:grid;grid-template-columns:repeat(7,1fr);gap:.4rem;margin:1.4rem 0 2.2rem;
+}
+.step-dot{
+  text-align:center;cursor:pointer;background:none;border:1px solid var(--line);
+  border-radius:10px;padding:.8rem .3rem;font-family:var(--serif);
+  color:var(--ink-soft);transition:transform .2s,background .2s,color .2s,border-color .2s;
+}
+.step-dot .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  border:1.5px solid currentColor;font-size:.85rem;margin-bottom:.35rem;}
+.step-dot:hover{transform:translateY(-3px);border-color:var(--seal);color:var(--seal);}
+.step-dot.on{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.step-dot .lbl{font-size:.9rem;display:block;}
+/* ---------- 练习案例 ---------- */
+.hero-extra-video{
+  display:inline-block;
+  margin-top:.4rem;
+  padding:.55rem .9rem;
+  font-size:.86rem;
+  color:var(--jade);
+  background:rgba(63,107,74,.1);
+  border:1px solid rgba(63,107,74,.35);
+  border-radius:8px;
+  line-height:1.5;
+}
+.hero-extra-video:hover{background:rgba(63,107,74,.18);}
+.case-list{display:grid;gap:1.2rem;}
+.case{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.case>summary{
+  cursor:pointer;
+  padding:1rem 1.2rem;
+  font-size:1.05rem;
+  font-weight:700;
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.6rem;
+}
+.case>summary::-webkit-details-marker{display:none;}
+.case>summary::before{content:"▸";color:var(--jade);transition:transform .2s;}
+.case[open]>summary::before{transform:rotate(90deg);}
+.case-tag{
+  margin-left:auto;
+  font-size:.72rem;
+  font-weight:400;
+  color:var(--ink-soft);
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:.15rem .7rem;
+}
+.case-body{padding:0 1.2rem 1.2rem;}
+.case-material{
+  background:var(--bg);
+  border-left:3px solid var(--gold);
+  border-radius:0 6px 6px 0;
+  padding:.8rem 1rem;
+  font-size:.9rem;
+  line-height:1.8;
+  margin-bottom:1rem;
+}
+.mini-table{border-collapse:collapse;width:100%;margin-top:.6rem;font-size:.85rem;text-align:center;}
+.mini-table th,.mini-table td{border:1px solid var(--line);padding:.3rem .4rem;}
+.mini-table th{background:rgba(166,124,46,.1);}
+.qlist{padding-left:1.4rem;display:grid;gap:.85rem;}
+.qlist li{line-height:1.8;}
+.ans{
+  margin-top:.4rem;
+  background:rgba(63,107,74,.06);
+  border:1px dashed rgba(63,107,74,.4);
+  border-radius:8px;
+  padding:.4rem .8rem;
+}
+.ans>summary{cursor:pointer;font-size:.85rem;color:var(--jade);list-style:none;}
+.ans>summary::-webkit-details-marker{display:none;}
+.ans>summary::before{content:"▸ ";}
+.ans[open]>summary::before{content:"▾ ";}
+.ans p{margin:.5rem 0 0;font-size:.9rem;line-height:1.8;}
+@media (max-width:600px){
+  .case-tag{margin-left:0;width:100%;}
+}
+@media print{
+  .case{break-inside:avoid;}
+  .ans[open] .ans{display:block;}
+}
+
+.video-frame{
+  margin:0 0 2rem;
+  padding:10px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+}
+.video-frame video{
+  display:block;
+  width:100%;
+  border-radius:6px;
+  background:#1c1710;
+}
+.video-frame figcaption{
+  margin-top:.7rem;
+  font-size:.85rem;
+  color:var(--ink-soft);
+  line-height:1.6;
+  text-align:center;
+}
+.step-panels{display:grid;gap:1.3rem;}
+.step-panel{
+  display:none;grid-template-columns:150px 1fr;gap:1.5rem;align-items:start;
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.7rem;box-shadow:var(--shadow);
+}
+.step-panel.on{display:grid;}
+.step-badge{
+  font-family:var(--serif);text-align:center;border:2px solid var(--seal);border-radius:12px;padding:1rem .5rem;
+}
+.step-badge .big{font-size:2.2rem;font-weight:800;color:var(--seal);line-height:1;}
+.step-badge .nm{font-size:1.05rem;margin-top:.4rem;display:block;}
+.step-body h3{font-family:var(--serif);margin:.1rem 0 .8rem;font-size:1.25rem;}
+.step-body .ancient{
+  font-family:var(--serif);background:rgba(42,36,25,.04);border-radius:8px;padding:.9rem 1.1rem;
+  font-size:1rem;line-height:1.95;margin-bottom:.8rem;
+}
+.step-body p{margin:.55rem 0;font-size:.94rem;}
+.step-body .modern-line{
+  display:flex;gap:.7rem;align-items:flex-start;background:rgba(63,107,74,.08);
+  border:1px solid rgba(63,107,74,.25);border-radius:8px;padding:.8rem 1rem;margin-top:.8rem;
+  font-size:.9rem;color:var(--jade-deep);
+}
+.step-body .modern-line b{color:var(--jade-deep);white-space:nowrap;}
+
+/* ---------- 闪光点 ---------- */
+.spark-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;}
+.spark{
+  background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1.3rem 1.4rem;
+  display:flex;gap:1rem;align-items:flex-start;
+}
+.spark .ic{
+  flex:0 0 44px;height:44px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(168,58,42,.1);color:var(--seal);
+}
+.spark h4{margin:0 0 .35rem;font-family:var(--serif);font-size:1.05rem;}
+.spark p{margin:0;font-size:.89rem;color:var(--ink-soft);}
+
+/* ---------- 现代技术 ---------- */
+.principle{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:stretch;}
+.panel-box{
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.6rem;box-shadow:var(--shadow);
+}
+.panel-box h3{font-family:var(--serif);margin:0 0 .7rem;font-size:1.18rem;}
+.panel-box h3 .mk{color:var(--jade);}
+.panel-box p{font-size:.93rem;margin:.6rem 0;}
+.hypo{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:.8rem;}
+.hypo th,.hypo td{border:1px solid var(--line);padding:.5rem .65rem;text-align:left;vertical-align:top;}
+.hypo th{background:var(--paper-3);font-family:var(--serif);}
+.callout{
+  border-left:4px solid var(--jade);background:rgba(63,107,74,.08);
+  padding:.8rem 1.1rem;border-radius:0 8px 8px 0;font-size:.9rem;margin:1rem 0;
+}
+.callout.warn{border-color:var(--gold);background:rgba(166,124,46,.1);}
+.fig{margin:1.4rem 0;}
+.fig .frame{
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.3rem;box-shadow:var(--shadow);
+}
+.fig figcaption{font-size:.83rem;color:var(--ink-faint);margin-top:.7rem;text-align:center;}
+
+.gen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.2rem;}
+.gen{
+  border:1px solid var(--line);border-radius:12px;padding:1.3rem;background:var(--paper);
+  border-top:4px solid var(--jade);
+}
+.gen .gen-no{font-family:var(--serif);font-size:.82rem;letter-spacing:.2em;color:var(--ink-faint);}
+.gen h4{font-family:var(--serif);margin:.35rem 0 .6rem;font-size:1.1rem;}
+.gen ul{margin:0;padding-left:1.1rem;font-size:.88rem;color:var(--ink-soft);}
+.gen ul li{margin:.3rem 0;}
+.gen.g1{border-top-color:var(--gold);}
+.gen.g3{border-top-color:var(--seal);}
+
+/* ---------- 对照表 ---------- */
+.cmp-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--paper);}
+.cmp{border-collapse:collapse;width:100%;min-width:680px;font-size:.9rem;}
+.cmp th,.cmp td{padding:.85rem 1rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+.cmp thead th{background:var(--ink);color:var(--paper);font-family:var(--serif);position:sticky;top:0;}
+.cmp tbody th{background:var(--paper-3);font-family:var(--serif);white-space:nowrap;}
+.cmp td.col-old{color:var(--ink-soft);}
+.cmp td.col-new{color:var(--jade-deep);}
+.cmp tr:last-child td,.cmp tr:last-child th{border-bottom:none;}
+
+/* ---------- 年表 ---------- */
+.timeline{list-style:none;margin:1.5rem 0 0;padding:0;border-left:2px solid var(--line);}
+.timeline li{position:relative;padding:0 0 1.2rem 1.6rem;}
+.timeline li::before{
+  content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;
+  background:var(--paper);border:2.5px solid var(--seal);
+}
+.timeline .ty{font-family:var(--serif);font-weight:700;color:var(--seal);margin-right:.7rem;}
+.timeline p{margin:.15rem 0 0;font-size:.9rem;color:var(--ink-soft);}
+
+/* ---------- 思考 ---------- */
+.think-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+details.think{
+  background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1rem 1.3rem;
+}
+details.think summary{cursor:pointer;font-family:var(--serif);font-weight:700;font-size:.98rem;list-style:none;}
+details.think summary::before{content:"问 ";color:var(--seal);}
+details.think summary::-webkit-details-marker{display:none;}
+details.think[open] summary{margin-bottom:.6rem;}
+details.think p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+
+/* ---------- 来源 ---------- */
+.src-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.6rem;}
+.src-grid a{font-size:.85rem;overflow-wrap:anywhere;}
+.src-grid .grp-title{grid-column:1/-1;font-family:var(--serif);font-weight:700;margin:1rem 0 .2rem;color:var(--ink);}
+footer.end{text-align:center;padding:2.6rem 1.25rem 3rem;color:var(--ink-faint);font-size:.85rem;border-top:1px solid var(--line);}
+footer.end .serif-quote{font-family:var(--serif);font-size:1.15rem;color:var(--ink-soft);margin-bottom:.5rem;}
+
+/* ---------- 动效 ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  .step-dot{transition:none;}
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;gap:1.5rem;padding-top:2.6rem;}
+  .seal{position:static;display:inline-grid;margin-top:1rem;transform:none;}
+  .era-grid{grid-template-columns:1fr;}
+  .stepper{grid-template-columns:repeat(4,1fr);}
+  .step-panel.on{grid-template-columns:1fr;}
+  .principle{grid-template-columns:1fr;}
+  .gen-grid{grid-template-columns:1fr;}
+  .spark-grid{grid-template-columns:1fr;}
+  .think-grid{grid-template-columns:1fr;}
+  .src-grid{grid-template-columns:1fr;}
+}
+@media (max-width:560px){
+  .stepper{grid-template-columns:repeat(2,1fr);}
+  .nav-links{width:100%;overflow-x:auto;flex-wrap:nowrap;margin-left:0;}
+}
+
+/* ---------- 课堂互动：开场活动卡 ---------- */
+.class-activity{background:linear-gradient(135deg,#f3ede0,#eef1e4);border:1px solid var(--line);border-left:5px solid var(--jade);border-radius:14px;padding:22px 26px;margin:22px 0 8px;box-shadow:var(--shadow,0 8px 24px rgba(70,55,30,.08))}
+.class-activity .ca-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.class-activity .ca-badge{display:inline-block;background:var(--jade);color:#fff;font-size:12.5px;letter-spacing:.12em;border-radius:999px;padding:3px 13px}
+.class-activity .ca-time{font-size:13px;color:var(--gold);letter-spacing:.06em}
+.class-activity h3{margin:4px 0 6px;font-family:var(--serif);font-size:20px}
+.class-activity p{margin:0 0 10px;font-size:14.8px;color:var(--ink-soft)}
+.class-activity .ca-q{background:rgba(255,255,255,.72);border:1px dashed var(--gold);border-radius:10px;padding:12px 16px;font-size:14.8px;color:var(--ink)}
+.class-activity .ca-q b{color:var(--redtea,#8a3e2e)}
+.class-activity .ca-flow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--ink-soft)}
+.class-activity .ca-flow span{background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 12px}
+
+/* ---------- 耘：鸭稻照片组 ---------- */
+.duck-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 6px}
+.duck-photos figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(70,55,30,.08)}
+.duck-photos img{display:block;width:100%;height:230px;object-fit:cover}
+.duck-photos figcaption{padding:9px 13px;font-size:12.8px;color:var(--ink-soft);line-height:1.6}
+.duck-jobs{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:14px 0}
+.duck-jobs h4{margin:0 0 8px;font-family:var(--serif);font-size:16.5px;color:var(--jade)}
+.duck-jobs ul{margin:0;padding-left:20px;font-size:14.3px;color:var(--ink-soft)}
+.duck-jobs li{margin-bottom:5px}
+.duck-jobs li b{color:var(--ink)}
+.discuss-box{background:var(--gold-bg,#f4ead6);border:1px solid #e3cfa6;border-radius:12px;padding:16px 20px;margin:14px 0}
+.discuss-box h4{margin:0 0 6px;font-family:var(--serif);font-size:16.5px;color:var(--redtea,#8a3e2e)}
+.discuss-box ol{margin:0;padding-left:20px;font-size:14.3px;color:var(--ink-soft)}
+.discuss-box li{margin-bottom:6px}
+.discuss-box a{font-weight:600}
+@media (max-width:760px){ .duck-photos{grid-template-columns:1fr} .duck-photos img{height:210px} }
+
+/* ---------- 打印 ---------- */
+@media print{
+  .nav,.stepper{display:none;}
+  body{background:#fff;}
+  .step-panel{display:grid !important;break-inside:avoid;box-shadow:none;border:1px solid #999;}
+  .classic-card,.era,.spark,.panel-box,.gen,details.think{box-shadow:none;break-inside:avoid;}
+  .band-alt{background:#fff;}
+  a{color:var(--ink);}
+  a[href^="http"]::after{content:"（" attr(href) "）";font-size:.75rem;color:#666;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <div class="nav-brand">稻作古今<span class="dot">·</span>教育扣子</div>
+    <div class="nav-links">
+      <a href="#prologue">序章</a>
+      <a href="#classic">壹·古籍</a>
+      <a href="#steps">贰·七步</a>
+      <a href="#sparks">叁·智慧</a>
+      <a href="#modern">肆·杂交水稻</a>
+      <a href="#compare">伍·对照</a>
+      <a href="#frontier">陆·前沿</a>
+      <a href="#timeline">年表</a>
+      <a href="#think">思考</a>
+      <a href="#practice">练习</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="hero-kicker">天工开物 × 现代生物育种</span>
+    <h1>从《天工开物》<br>到<em>杂交水稻</em></h1>
+    <a class="hero-extra-video" href="https://www.bilibili.com/video/BV1sb4y1K7Rm/" target="_blank" rel="noopener noreferrer">📺 延伸视频：记录《天工开物》古代水稻的一生过程，实现"禾下乘凉梦"（哔哩哔哩 · 8分47秒）↗</a>
+    <p class="lead">
+      1637 年，宋应星把江南农夫的种稻技艺写进《乃粒》；三百多年后，袁隆平和一代代育种家用遗传育种技术，让同样的土地多养活了数亿人。
+      这是一次跨越四百年的对话——关于一粒种子，也关于人如何与自然协作。
+    </p>
+    <div class="hero-meta">
+      <div><b>1637</b>《天工开物》初刊</div>
+      <div><b>1973</b>籼型杂交稻三系配套</div>
+      <div><b>2026</b>耐盐碱稻重度盐渍地亩产 476.69 公斤</div>
+    </div>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 360 300" role="img" aria-labelledby="heroSvgTitle" style="width:100%;height:auto;">
+      <title id="heroSvgTitle">白描风格的稻穗与梯田插图</title>
+      <desc>明代木刻白描版画风格，描绘稻穗、叶片与田垄。</desc>
+      <g fill="none" stroke="#2a2419" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 田垄 -->
+        <path d="M20 238 C90 222,150 226,210 236 S320 250,345 240"/>
+        <path d="M18 258 C95 244,160 248,225 257 S325 268,346 260" opacity=".55"/>
+        <path d="M18 278 C95 266,165 269,228 277 S328 286,346 280" opacity=".35"/>
+        <!-- 主稻穗 -->
+        <path d="M185 232 C182 170,184 110,196 52"/>
+        <path d="M196 52 C178 66,166 82,160 102"/>
+        <path d="M196 52 C214 64,226 80,233 100"/>
+        <!-- 谷粒 -->
+        <g>
+          <ellipse cx="176" cy="70" rx="5" ry="10" transform="rotate(-28 176 70)"/>
+          <ellipse cx="168" cy="88" rx="5" ry="10" transform="rotate(-34 168 88)"/>
+          <ellipse cx="163" cy="106" rx="5" ry="10" transform="rotate(-40 163 106)"/>
+          <ellipse cx="162" cy="124" rx="5" ry="10" transform="rotate(-46 162 124)"/>
+          <ellipse cx="215" cy="68" rx="5" ry="10" transform="rotate(28 215 68)"/>
+          <ellipse cx="225" cy="86" rx="5" ry="10" transform="rotate(34 225 86)"/>
+          <ellipse cx="231" cy="104" rx="5" ry="10" transform="rotate(40 231 104)"/>
+          <ellipse cx="233" cy="122" rx="5" ry="10" transform="rotate(46 233 122)"/>
+          <ellipse cx="190" cy="74" rx="5" ry="10"/>
+          <ellipse cx="186" cy="96" rx="5" ry="10"/>
+          <ellipse cx="183" cy="118" rx="5" ry="10"/>
+          <ellipse cx="181" cy="140" rx="5" ry="10"/>
+          <ellipse cx="180" cy="162" rx="5" ry="10"/>
+        </g>
+        <!-- 叶片 -->
+        <path d="M185 180 C140 170,110 182,86 206 C122 202,156 196,185 196"/>
+        <path d="M189 200 C232 188,264 198,288 222 C252 218,216 214,189 214"/>
+        <path d="M186 150 C152 144,128 152,108 172 C138 168,164 164,186 166"/>
+        <!-- 小稻株 -->
+        <path d="M80 240 C78 214,80 196,86 182"/>
+        <path d="M84 214 C66 208,54 214,46 226 C62 222,76 222,84 226"/>
+        <path d="M276 246 C274 222,276 204,282 190"/>
+        <path d="M280 220 C298 214,310 220,318 232 C302 228,288 228,280 232"/>
+      </g>
+    </svg>
+    <div class="seal">天工<br>开物</div>
+  </div>
+</header>
+
+<!-- ============ 序章 ============ -->
+<section id="prologue" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">序 章</div>
+      <h2>同一粒种子，三个时代的回答</h2>
+      <p>从"靠经验选种"到"按遗传学设计种子"，技术变了，但"让稻子长得更好"的问题四百年未变。</p>
+    </div>
+    <div class="era-grid">
+      <article class="era reveal">
+        <div class="yr">1637</div>
+        <h3>明代农夫的经验体系</h3>
+        <p>宋应星在《天工开物·乃粒》中系统记录了浸种、育秧、插秧、耘耔、施肥、灌溉到收获的全套稻作技术。那时的"育种"，是一代代农夫在田间用眼睛和双手完成的。</p>
+      </article>
+      <article class="era jade reveal">
+        <div class="yr">1973</div>
+        <h3>杂交水稻的遗传学突破</h3>
+        <p>以"野败"为突破口，中国籼型杂交水稻三系配套成功，并于 1976 年大面积推广，中国成为世界上第一个在生产上成功利用水稻杂种优势的国家。</p>
+      </article>
+      <article class="era gold reveal">
+        <div class="yr">2026</div>
+        <h3>向滩涂与沙漠要粮</h3>
+        <p>第三代杂交水稻制种产量提升至每亩 200–300 公斤；耐盐碱品种箐两优3261 在 10‰ 重度盐渍地亩产 476.69 公斤，"再造一亿亩良田"正在成为现实。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 壹·古籍 ============ -->
+<section id="classic">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">壹</div>
+      <h2>《天工开物》里的水稻</h2>
+      <p>
+        《乃粒》是《天工开物》卷上第一篇，"乃粒"取自《尚书》"烝民乃粒"——百姓赖谷物得食。
+        全书 53 条水稻相关原文的完整整理见配套文档《天工开物_水稻原文整理.md》，以下是理解全书稻作思想的两条总纲。
+      </p>
+    </div>
+
+    <div class="classic-card reveal">
+      <div class="src">卷上 · 乃粒第一 · 篇首序论</div>
+      <blockquote>
+        生人不能久生，而五谷生之；五谷不能自生，而生人生之。<strong>土脉历时代而异，种性随水土而分。</strong>
+      </blockquote>
+      <p class="note">
+        <span class="tag-tech">科学思想</span>
+        人靠五谷生存，五谷靠人种植；<strong>土壤性状随时代变化，品种特性随水土条件分化</strong>。
+        这句话是全篇总纲，已经包含了"作物与环境相互作用"的思想，与现代生态学中"表现型 = 基因型 + 环境"的认识遥相呼应。
+        原文据<a href="http://agri-history.ihns.ac.cn/books/tgkwnl.htm" target="_blank" rel="noopener noreferrer">中科院自然科学史所·农业历史资料库</a>与
+        <a href="https://m.gushiwen.cn/guwen/bookv_6c1d48755d6a.aspx" target="_blank" rel="noopener noreferrer">古文岛标点本</a>互校。
+      </p>
+    </div>
+
+    <div class="classic-card reveal">
+      <div class="src">卷上 · 乃粒第一 · 总名</div>
+      <blockquote>
+        今天下育民人者，<strong>稻居什七</strong>，而来、牟、黍、稷居什三。
+      </blockquote>
+      <p class="note">
+        <span class="tag-tech">粮食结构</span>
+        宋应星记载，明代养活天下人的粮食中水稻占十分之七，麦与黍稷占十分之三。
+        这是研究明代粮食结构与水稻地位的关键史料，也说明他为何用最大的篇幅记录水稻。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 贰·七步 ============ -->
+<section id="steps" class="band-alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">贰</div>
+      <h2>古法稻作：一粒谷种的七段旅程</h2>
+      <p>点击上方各步骤，查看《天工开物》原文、白话注释，以及它与现代农业经验的对应。原文均出自《乃粒》。</p>
+    </div>
+
+    <div class="class-activity reveal" id="warmup">
+      <div class="ca-top">
+        <span class="ca-badge">课堂引入 · 互动</span>
+        <span class="ca-time">⏱ 建议用时 5 分钟以内（小组或同桌讨论）</span>
+      </div>
+      <h3>🌾 最近，水稻成熟了</h3>
+      <p>眼下正值水稻成熟的时节。开课先不讲课本，请同学们联系生活里见过的稻田、米饭或农田景象，聊几个小问题，再带着问题进入《天工开物》的七段旅程。</p>
+      <div class="ca-q">
+        <b>讨论提示：</b>① 你最近在哪里见过成熟的水稻？金黄的稻田里，一株水稻从种子到收获，大概要经历哪些事？<br>
+        ② 这七段旅程中，你觉得哪一步最费人力、最辛苦？猜一猜古人是怎么做的，现代人又可以用什么办法替代人力？
+      </div>
+      <div class="ca-flow">
+        <span>1′ 看图/回忆生活</span><span>2–3′ 同桌交流</span><span>1′ 自由发言</span><span>带着猜想进入七步 ↓</span>
+      </div>
+    </div>
+
+    <figure class="video-frame reveal">
+      <video controls preload="metadata" playsinline aria-label="天工开物水稻种植技术流程白描动画">
+        <source src="成片/天工开物水稻种植流程动画_成片.mp4" type="video/mp4">
+        <source src="https://p74khzv8jn.page.coze.site/%E6%88%90%E7%89%87/%E5%A4%A9%E5%B7%A5%E5%BC%80%E7%89%A9%E6%B0%B4%E7%A8%BB%E7%A7%8D%E6%A4%8D%E6%B5%81%E7%A8%8B%E5%8A%A8%E7%94%BB_%E6%88%90%E7%89%87.mp4" type="video/mp4">
+        当前浏览器无法播放该视频，可访问在线版网页：https://p74khzv8jn.page.coze.site 或在本目录打开 成片/天工开物水稻种植流程动画_成片.mp4
+      </video>
+      <figcaption>🎬 白描版画动画：84 秒看完水稻种植全流程（浸种 → 育秧 → 耕耙整地 → 插秧 → 耘田 → 收割 → 脱粒），带旁白解说</figcaption>
+    </figure>
+
+    <div class="stepper reveal" role="tablist" aria-label="古法稻作步骤">
+      <button class="step-dot on" data-step="1" role="tab" aria-selected="true"><span class="n">1</span><span class="lbl">浸种</span></button>
+      <button class="step-dot" data-step="2" role="tab" aria-selected="false"><span class="n">2</span><span class="lbl">育秧</span></button>
+      <button class="step-dot" data-step="3" role="tab" aria-selected="false"><span class="n">3</span><span class="lbl">整地</span></button>
+      <button class="step-dot" data-step="4" role="tab" aria-selected="false"><span class="n">4</span><span class="lbl">插秧</span></button>
+      <button class="step-dot" data-step="5" role="tab" aria-selected="false"><span class="n">5</span><span class="lbl">耘耔</span></button>
+      <button class="step-dot" data-step="6" role="tab" aria-selected="false"><span class="n">6</span><span class="lbl">灌溉</span></button>
+      <button class="step-dot" data-step="7" role="tab" aria-selected="false"><span class="n">7</span><span class="lbl">收获</span></button>
+    </div>
+
+    <div class="step-panels">
+      <!-- 1 浸种 -->
+      <article class="step-panel on" data-panel="1">
+        <div class="step-badge"><span class="big">壹</span><span class="nm">浸种</span></div>
+        <div class="step-body">
+          <h3>湿种：择期 + 催芽</h3>
+          <div class="ancient">湿种之期，最早者春分以前，名为社种，（遇天寒有冻死不生者。）最迟者后于清明。</div>
+          <div class="ancient">凡播种，先以稻麦稿包浸数日，俟其生芽，撒于田中，生出寸许，其名曰秧。</div>
+          <p>浸种在春分至清明之间进行，过早遇倒春寒会烂种；用稻秆麦秸包裹浸水数日，兼有保温保湿作用，待芽长出再撒入秧田。</p>
+          <div class="modern-line"><b>今日对应：</b><span>现代育秧同样强调根据气温确定浸种期，并采用保温催芽、药剂浸种（防治种传病害），"低温烂种"至今仍是早稻育秧的主要风险。</span></div>
+        </div>
+      </article>
+
+      <!-- 2 育秧 -->
+      <article class="step-panel" data-panel="2">
+        <div class="step-badge"><span class="big">贰</span><span class="nm">育秧</span></div>
+        <div class="step-body">
+          <h3>秧田：集中育苗的精细化管理</h3>
+          <div class="ancient">凡秧田一亩所生秧，供移栽二十五亩。</div>
+          <p>一亩秧田育出的秧苗可移栽二十五亩大田（约 1∶25），这是规划秧田面积的实用经验数据。</p>
+          <p>书中还记录了双季晚稻的育秧巧法：晚稻秧在清明时就和早秧同时播种，秧龄历经四、五月，"任从烈日暵干无忧"，为六月早稻收获后抢插第二季做准备。</p>
+          <div class="modern-line"><b>今日对应：</b><span>现代普遍采用的"秧好半年粮"、集中育秧（温室、工厂化育秧）与合理秧本田比例，思路与此一脉相承；秧苗素质直接决定杂交稻分蘖与成穗。</span></div>
+        </div>
+      </article>
+
+      <!-- 3 整地 -->
+      <article class="step-panel" data-panel="3">
+        <div class="step-badge"><span class="big">叁</span><span class="nm">整地</span></div>
+        <div class="step-body">
+          <h3>耕—耙—耖：让田土细熟肥活</h3>
+          <div class="ancient">凡稻田刈获不再种者，土宜本秋耕垦，使宿藁化烂，敌粪力一倍。</div>
+          <div class="ancient">凡一耕之后，勤者再耕、三耕，然后施耙，则土质匀碎，而其中膏脉释化也。</div>
+          <p>秋收后及时秋耕，让稻茬腐烂还田，肥效可抵一倍粪肥；来年多耕细耙，使土质匀碎、肥分释放。水田整地由此形成"耕—耙—耖"三道环节。</p>
+          <div class="modern-line"><b>今日对应：</b><span>现代推广的秸秆还田、秋耕晒垡、旋耕与水田搅浆整地，原理完全一致；对无牛贫农，书中还记录了"扛悬耜""磨耙"等人力代牛农具。</span></div>
+        </div>
+      </article>
+
+      <!-- 4 插秧 -->
+      <article class="step-panel" data-panel="4">
+        <div class="step-badge"><span class="big">肆</span><span class="nm">插秧</span></div>
+        <div class="step-body">
+          <h3>移栽：秧龄三十日，过期必减产</h3>
+          <div class="ancient">秧生三十日即拔起分栽。若田亩逢旱干、水溢，不可插秧。秧过期，老而长节，即栽于亩中，生谷数粒，结果而已。</div>
+          <p>秧苗约三十天必须移栽；田过干或水太深都不宜插。秧龄过长会"老而长节"，栽下只结少数谷粒。</p>
+          <div class="modern-line"><b>今日对应：</b><span>现代稻作同样强调"适龄壮秧移栽、防止秧苗老化拔节"，并通过合理密植保证有效穗数——这是杂交稻高产栽培的关键环节之一。</span></div>
+        </div>
+      </article>
+
+      <!-- 5 耘耔 -->
+      <article class="step-panel" data-panel="5">
+        <div class="step-badge"><span class="big">伍</span><span class="nm">耘耔</span></div>
+        <div class="step-body">
+          <h3>足耔手耘：中耕、除草、壅根</h3>
+          <div class="ancient">青叶既长，则耔可施焉，（俗名挞禾。）植杖于手，以足扶泥壅根，并屈宿田水草，使不生也。</div>
+          <div class="ancient">而稊、稗与荼、蓼，非足力所可除者，则耘以继之。耘者苦在腰手，辨在两眸。非类既去，而嘉谷茂焉。</div>
+          <p>"耔"是拄杖用脚把泥拨向稻根培土、踩伏水草；"耘"是弯腰用手拔除稗、稊等脚力除不掉的杂草。杂草除尽，稻苗才茂盛。</p>
+
+          <!-- 鸭稻共作：鸭子在干“耘”的活 -->
+          <div class="duck-jobs">
+            <h4>🦆 鸭稻共作：请鸭子来“耘”田</h4>
+            <p style="margin:0 0 8px;font-size:14.3px;color:var(--ink-soft)">在“鸭稻共作”生态农业里，鸭子被放入水稻田。对照《天工开物》中“耔（足扶泥、踩水草）”与“耘（除草、吃虫）”的动作可以发现——<b style="color:var(--ink)">鸭子在田里干的，主要正是“耘”这一步的活</b>：</p>
+          </div>
+          <div class="duck-photos">
+            <figure>
+              <img src="https://www.coze.cn/s/ieNsIouYftQ/" data-local="图片/yadao_1.png" alt="俯视稻田，成群的鸭子在秧苗行列间的浅水中游动觅食" loading="lazy">
+              <figcaption>成群的麻鸭在秧苗行间的浅水里穿行觅食，行列间正是杂草、害虫与水生小动物集中之处。</figcaption>
+            </figure>
+            <figure>
+              <img src="https://www.coze.cn/s/BKcqE1yY89w/" data-local="图片/yadao_3.png" alt="平视水稻田，十多只鸭子在青嫩秧苗的间隙游弋" loading="lazy">
+              <figcaption>鸭子在稻丛间隙游弋，啄食、踩踏之间把杂草除掉、把泥水搅动起来，代替了人的弯腰手耘。</figcaption>
+            </figure>
+          </div>
+          <div class="duck-jobs">
+            <h4>鸭子在“耘”里都做了哪些“作业”？</h4>
+            <ul>
+              <li><b>除草：</b>啄食水草、浮萍和幼嫩杂草，鸭蹼踩踏、搅浑田水，使杂草难以见光生长——对应手耘“去稊稗、荼蓼”。</li>
+              <li><b>除虫：</b>取食稻飞虱、稻象甲、福寿螺等田间害虫与螺类，减少虫害，可少用农药。</li>
+              <li><b>中耕松土：</b>鸭蹼在泥里来回踩踏搅动，等于不断“中耕”，把泥水拨向稻根，兼有“耔”的壅根作用。</li>
+              <li><b>施肥：</b>鸭粪直接落入田中肥田，鸭在田里长大还能额外收获鸭肉、鸭蛋，一份田两份收成。</li>
+            </ul>
+            <p style="margin:10px 0 0;font-size:13px;color:var(--ink-faint);">提示：鸭子要在插秧返青后适时放入、稻穗抽穗前收回，避免碰伤秧苗或啄食稻穗——放鸭、收鸭的时机本身就是管理智慧。</p>
+          </div>
+
+          <div class="discuss-box">
+            <h4>💬 课堂讨论：现代怎么在“耘”这一步节省人力？</h4>
+            <ol>
+              <li>古人“耘者苦在腰手”，最辛苦。想一想：除了请鸭子帮忙，现代人在<b>除草、除虫、中耕</b>上还能用什么办法替代人力？（提示：化学、机械、生物、生态、智能设备……）</li>
+              <li>如果不用除草剂、也不养鸭，还能设计出怎样的“耘”？请比较不同思路在<b>省人力、成本、环境影响</b>上的取舍。</li>
+              <li>带着这些思路继续往后看——在<a href="#frontier">陆·前沿科技</a>与<a href="#compare">伍·古今对照（除草一栏）</a>中，找一找哪些已经成为现实。👉 另可做中考题：<a href="#case-xiadao">虾稻共作练习</a></li>
+            </ol>
+          </div>
+
+          <div class="modern-line"><b>今日对应：</b><span>现代中耕除草、化学除草剂与人工除稗并用，“除早除小”的原则相同；稻田养鸭、除草膜、杀虫灯、机械中耕与智能除草装备等，把“耘”从弯腰苦工变成生态与技术活。</span></div>
+        </div>
+      </article>
+
+      <!-- 6 灌溉 -->
+      <article class="step-panel" data-panel="6">
+        <div class="step-badge"><span class="big">陆</span><span class="nm">灌溉</span></div>
+        <div class="step-body">
+          <h3>看水：水稻十天也离不得水</h3>
+          <div class="ancient">凡苗自函活以至颖栗，早者食水三斗，晚者食水五斗，失水即枯，（将刈之时少水一升，谷数虽存，米粒缩小，入碾臼中亦多断碎。）</div>
+          <p>书中以"斗、升"估算耗水量，特别指出孕穗至灌浆期缺水会使米粒瘦小、舂碎增多——正是现代所说的"灌浆不足、粒重下降"。</p>
+          <p>提水工具齐全：筒车靠水力自动提水、"昼夜不息，百亩无忧"；龙骨水车以人踏或牛转；手摇小车"拔车"适合小田；风帆水车专用于排涝。</p>
+          <div class="modern-line"><b>今日对应：</b><span>现代节水灌溉、浅湿干交替灌溉同样把孕穗—灌浆期视为需水临界期；提水机械换成了水泵，排灌分家的思想未变。</span></div>
+        </div>
+      </article>
+
+      <!-- 7 收获 -->
+      <article class="step-panel" data-panel="7">
+        <div class="step-badge"><span class="big">柒</span><span class="nm">收获</span></div>
+        <div class="step-body">
+          <h3>收割：与风和雨赛跑</h3>
+          <div class="ancient">凡稻成熟之时，遇狂风吹粒殒落，或阴雨竟旬，谷粒沾湿自烂，此八灾也。</div>
+          <p>成熟时狂风会吹落谷粒，连阴十天使湿谷在穗上霉烂（穗发芽）。书中记载的应急办法是把湿谷下锅炒成干粮"炒糗"充饥。</p>
+          <div class="modern-line"><b>今日对应：</b><span>现代强调适时收获、抢晴收割与机械化烘干，解决的正是同一对矛盾——落粒损失与穗萌霉变；稻谷产后烘干已成为标配设施。</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 叁·智慧闪光点 ============ -->
+<section id="sparks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">叁</div>
+      <h2>四百年前的"科学操作"</h2>
+      <p>这些记载至今仍令农史学家惊叹：它们不是碰巧，而是长期观察与反复验证的结果。</p>
+    </div>
+    <div class="spark-grid">
+      <div class="spark reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M7 8c0-2 2-4 5-4s5 2 5 4-2 3-5 3-5 1-5 3 2 4 5 4 5-2 5-4"/></svg>
+        </div>
+        <div>
+          <h4>"骨灰蘸秧根"——世界著名的磷肥记载</h4>
+          <p>冷浸田用禽兽骨灰蘸秧根。骨灰富含磷，可促进发根分蘖，这是世界农学史上著名的早期磷肥施用记录。（《稻宜》）</p>
+        </div>
+      </div>
+      <div class="spark reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17h16"/><path d="M6 17V9l6-4 6 4v8"/><path d="M10 17v-5h4v5"/></svg>
+        </div>
+        <div>
+          <h4>石灰改冷田——酸碱中和的朴素应用</h4>
+          <p>冷浆田以"石灰淹苗足"，中和酸性、提高土温；并明确"向阳暖土不宜"，说明当时已懂得按土性区别施用。（《稻宜》）</p>
+        </div>
+      </div>
+      <div class="spark reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/></svg>
+        </div>
+        <div>
+          <h4>看土施肥 + 肥效分级</h4>
+          <p>粪、枯饼、草皮树叶分类施用，并把油枯按肥效排序（芝麻饼、萝卜子饼为上）；施肥还要看天气，防止雨水漂肥。</p>
+        </div>
+      </div>
+      <div class="spark reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2 4-2 6 0 10 2 4-2 6 0 10"/><path d="M6 5c1 3-1 5 0 8"/><path d="M18 5c-1 3 1 5 0 8"/></svg>
+        </div>
+        <div>
+          <h4>绿肥压青：用地与养地结合</h4>
+          <p>南方稻田种"肥田麦"不收籽，春天趁青绿耕翻压入田中沤烂，秋收稻谷必加倍。这是明确的绿肥—水稻增产记载。</p>
+        </div>
+      </div>
+      <div class="spark reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18"/><path d="M3 7h18"/><path d="M3 17h18"/><path d="M8 4v3"/><path d="M16 12v5"/></svg>
+        </div>
+        <div>
+          <h4>双季稻与稻麦轮作</h4>
+          <p>记录南方平原"一岁两栽两获"，并系统总结稻麦轮作茬口安排，通过多熟制提高土地年产出。</p>
+        </div>
+      </div>
+      <div class="spark reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v18"/><path d="M5 8c5 0 8 2 8 5s-3 4-8 4"/><path d="M19 6c-3 2-3 10 0 12" opacity=".5"/></svg>
+        </div>
+        <div>
+          <h4>不诿鬼神：把"鬼火"还给自然</h4>
+          <p>对夜烧稻叶的"鬼火"，作者明确反对鬼神说，指出其出自朽物、夜见昼灭。现代解释为磷化氢自燃（磷火）——观察方向正确，机理则应以现代科学为准。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 肆·现代杂交水稻 ============ -->
+<section id="modern" class="band-alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">肆</div>
+      <h2>现代杂交水稻：按遗传学"设计"种子</h2>
+      <p>如果说《天工开物》解决的是"如何把稻种好"，现代杂交水稻解决的则是更上游的问题——"如何让种子本身更高产"。</p>
+    </div>
+
+    <div class="principle">
+      <div class="panel-box reveal">
+        <h3><span class="mk">难题</span> · 水稻本是"自花传粉"作物</h3>
+        <p>一朵稻花里雌雄蕊俱全，开花即自花授粉。要让两个品种杂交，必须在花粉成熟前逐花人工去雄，无法用于大田生产。</p>
+        <p>因此全部技术路线的核心只有一个：<strong>如何获得并繁殖一种花粉败育（雄性不育）、只能接受外来花粉的母本</strong>。</p>
+        <p style="font-size:.83rem;color:var(--ink-faint);">据<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=1248261245276056546" target="_blank" rel="noopener noreferrer">学习强国·杂交水稻专题</a></p>
+      </div>
+      <div class="panel-box reveal">
+        <h3><span class="mk">原理</span> · 杂种优势（Heterosis）</h3>
+        <p>两个遗传组成不同的亲本杂交，子一代（F₁）在生长势、抗逆性、产量等方面优于双亲。它在 F₁ 最强，自交留种即发生性状分离——所以杂交稻必须年年购种。</p>
+        <table class="hypo">
+          <thead><tr><th>经典假说</th><th>教学版解释</th></tr></thead>
+          <tbody>
+            <tr><td><b>显性假说</b></td><td>显性有利基因"遮盖"隐性不利基因，优势互补</td></tr>
+            <tr><td><b>超显性假说</b></td><td>杂合子 A₁A₂ 本身比两种纯合子更有生命力</td></tr>
+            <tr><td><b>上位性假说</b></td><td>F₁ 获得了更优的非等位基因组合方式</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.83rem;color:var(--ink-faint);margin-top:.6rem;">
+          韩斌院士团队对 2839 份杂交稻的基因组分析（<i>Nature Genetics</i>, 2023）证实显性与超显性位点均有贡献，据
+          <a href="http://www.cemps.cas.cn/kyjz/kyjz2019_197017/202309/t20230907_6875131.html" target="_blank" rel="noopener noreferrer">中科院分子植物卓越中心</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- 三系法 SVG 图解 -->
+    <figure class="fig reveal">
+      <div class="frame">
+        <svg viewBox="0 0 900 330" role="img" aria-labelledby="threeLineTitle" style="width:100%;height:auto;">
+          <title id="threeLineTitle">三系法杂交水稻关系示意图</title>
+          <desc>不育系与保持系杂交繁殖不育系；不育系与恢复系杂交得到大田用种 F1。</desc>
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#2a2419"/>
+            </marker>
+            <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#a83a2a"/>
+            </marker>
+          </defs>
+          <!-- 三个系 -->
+          <g font-family="serif" text-anchor="middle">
+            <rect x="60" y="40" width="180" height="92" rx="12" fill="#fbf6e9" stroke="#a83a2a" stroke-width="2"/>
+            <text x="150" y="74" font-size="20" font-weight="bold" fill="#a83a2a">不育系（A）</text>
+            <text x="150" y="104" font-size="13" fill="#5d5342">花粉败育 · 作母本</text>
+
+            <rect x="360" y="40" width="180" height="92" rx="12" fill="#fbf6e9" stroke="#2a2419" stroke-width="2"/>
+            <text x="450" y="74" font-size="20" font-weight="bold" fill="#2a2419">保持系（B）</text>
+            <text x="450" y="104" font-size="13" fill="#5d5342">授粉后代仍不育</text>
+
+            <rect x="660" y="40" width="180" height="92" rx="12" fill="#fbf6e9" stroke="#3f6b4a" stroke-width="2"/>
+            <text x="750" y="74" font-size="20" font-weight="bold" fill="#3f6b4a">恢复系（R）</text>
+            <text x="750" y="104" font-size="13" fill="#5d5342">使 F1 恢复可育</text>
+          </g>
+          <!-- R -> A 制种：从三个方框上方绕行 -->
+          <path d="M750 40 V20 H150 V34" stroke="#a83a2a" stroke-width="2.2" fill="none" marker-end="url(#arrowRed)"/>
+          <text x="450" y="14" font-size="12.5" text-anchor="middle" fill="#a83a2a" font-family="sans-serif">恢复系给不育系授粉（大田制种）</text>
+          <!-- 箭头：B -> A 繁殖 -->
+          <path d="M360 86 H248" stroke="#2a2419" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+          <text x="304" y="76" font-size="12.5" text-anchor="middle" fill="#5d5342" font-family="sans-serif">保持系授粉</text>
+          <!-- A -> 繁殖不育系 -->
+          <path d="M150 132 V146" stroke="#2a2419" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+          <rect x="72" y="150" width="156" height="44" rx="9" fill="#efe5cf" stroke="#d8caa8"/>
+          <text x="150" y="178" font-size="13.5" text-anchor="middle" fill="#5d5342" font-family="sans-serif">繁殖出新不育系（A）</text>
+          <!-- F1 大田用种 -->
+          <path d="M236 118 C300 160 330 200 372 234" stroke="#a83a2a" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+          <rect x="380" y="218" width="360" height="72" rx="12" fill="#a83a2a"/>
+          <text x="560" y="252" font-size="20" font-weight="bold" text-anchor="middle" fill="#f6f0e2" font-family="serif">杂交种 F1：大田用种</text>
+          <text x="560" y="278" font-size="13" text-anchor="middle" fill="#f6f0e2" font-family="sans-serif" opacity=".9">恢复可育 · 表现强大杂种优势 · 农民年年购种</text>
+        </svg>
+      </div>
+      <figcaption>三系配套关系：保持系负责"繁殖母本"，恢复系负责"生产大田用种"。据农业农村部种业管理司资料改绘。</figcaption>
+    </figure>
+
+    <div class="callout reveal">
+      <strong>关键突破——"野败"。</strong>
+      1970 年 11 月 23 日，袁隆平的助手李必湖在海南三亚发现一株花粉败育的普通野生稻，被命名为"野败"；材料无偿分送全国协作攻关。
+      1973 年 10 月籼型杂交水稻三系配套正式宣告成功，1976 年起大面积推广，普遍增产 20% 以上。目前国内外杂交稻 83% 以上是"野败"后代。
+      （<a href="https://szb.farmer.com.cn/2023/20231027/20231027_008/news-nmrb-12550-20231027-m-008-300.pdf" target="_blank" rel="noopener noreferrer">农民日报</a>；
+      <a href="https://news.gmw.cn/2019-10/07/content_33209942.htm" target="_blank" rel="noopener noreferrer">光明日报/新华社</a>；
+      <a href="https://zys.moa.gov.cn/mhsh/202104/t20210422_6366373.htm" target="_blank" rel="noopener noreferrer">农业农村部</a>）
+    </div>
+
+    <div class="callout warn reveal">
+      <strong>第二代：两系法。</strong>
+      1973 年石明松发现光敏核不育株（长日不育、短日可育），邓华凤又发现温敏系；同一不育系"一系两用"，不再需要保持系，配组自由度大增。
+      1995 年两系法研究成功，2013 年获国家科技进步奖特等奖。其风险是育性受天气影响——制种敏感期遇异常低温可能导致制种失败。
+      （<a href="https://www.cae.cn/cae/html/main/col35/2014-01/16/20140116162919224977869_1.html" target="_blank" rel="noopener noreferrer">中国工程院/科学网</a>）
+    </div>
+
+    <!-- 超级稻产量图 -->
+    <figure class="fig reveal">
+      <div class="frame">
+        <svg viewBox="0 0 900 340" role="img" aria-labelledby="yieldTitle" style="width:100%;height:auto;">
+          <title id="yieldTitle">中国超级稻百亩片亩产攻关纪录</title>
+          <desc>2000年700公斤，2004年800公斤，2011年900公斤，2014年1000公斤，2017年1149.02公斤，2023年1251.5公斤。</desc>
+          <g font-family="sans-serif">
+            <!-- 坐标 -->
+            <line x1="70" y1="270" x2="860" y2="270" stroke="#8a7d66" stroke-width="1.5"/>
+            <!-- 网格线 -->
+            <g stroke="#d8caa8" stroke-width="1" stroke-dasharray="4 5">
+              <line x1="70" y1="220" x2="860" y2="220"/>
+              <line x1="70" y1="170" x2="860" y2="170"/>
+              <line x1="70" y1="120" x2="860" y2="120"/>
+              <line x1="70" y1="70" x2="860" y2="70"/>
+            </g>
+            <g font-size="11" fill="#8a7d66" text-anchor="end">
+              <text x="62" y="274">0</text>
+              <text x="62" y="224">250</text>
+              <text x="62" y="174">500</text>
+              <text x="62" y="124">750</text>
+              <text x="62" y="74">1250</text>
+            </g>
+            <!-- 柱：比例 y = 270 - v*0.16 (1250 -> 70) -->
+            <g>
+              <rect x="110" y="158" width="80" height="112" rx="4" fill="#a67c2e"/>
+              <text x="150" y="148" font-size="13" fill="#2a2419" text-anchor="middle" font-weight="bold">700</text>
+              <text x="150" y="290" font-size="12" fill="#5d5342" text-anchor="middle">2000</text>
+
+              <rect x="240" y="142" width="80" height="128" rx="4" fill="#a67c2e"/>
+              <text x="280" y="132" font-size="13" fill="#2a2419" text-anchor="middle" font-weight="bold">800</text>
+              <text x="280" y="290" font-size="12" fill="#5d5342" text-anchor="middle">2004</text>
+
+              <rect x="370" y="126" width="80" height="144" rx="4" fill="#3f6b4a"/>
+              <text x="410" y="116" font-size="13" fill="#2a2419" text-anchor="middle" font-weight="bold">900</text>
+              <text x="410" y="290" font-size="12" fill="#5d5342" text-anchor="middle">2011</text>
+
+              <rect x="500" y="110" width="80" height="160" rx="4" fill="#3f6b4a"/>
+              <text x="540" y="100" font-size="13" fill="#2a2419" text-anchor="middle" font-weight="bold">1000</text>
+              <text x="540" y="290" font-size="12" fill="#5d5342" text-anchor="middle">2014</text>
+
+              <rect x="630" y="86.2" width="80" height="183.8" rx="4" fill="#a83a2a"/>
+              <text x="670" y="76" font-size="12.5" fill="#2a2419" text-anchor="middle" font-weight="bold">1149.02</text>
+              <text x="670" y="290" font-size="12" fill="#5d5342" text-anchor="middle">2017</text>
+
+              <rect x="760" y="69.8" width="80" height="200.2" rx="4" fill="#a83a2a"/>
+              <text x="800" y="59" font-size="12.5" fill="#2a2419" text-anchor="middle" font-weight="bold">1251.5</text>
+              <text x="800" y="290" font-size="12" fill="#5d5342" text-anchor="middle">2023</text>
+            </g>
+            <text x="465" y="322" font-size="12" fill="#8a7d66" text-anchor="middle">单位：公斤/亩（百亩连片示范片、专家测产）</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        超级稻四期目标（700→800→900→1000）先后实现；2017 年湘两优900 达 1149.02 公斤；
+        2023 年 10 月"粒两优8022"在四川德昌达 1251.5 公斤，创杂交水稻单季亩产世界纪录。
+        （<a href="http://news.cnr.cn/kuaixun/20231014/t20231014_526451074.shtml" target="_blank" rel="noopener noreferrer">央广网</a>；
+        <a href="http://www.news.cn/local/2023-10/15/c_1129916878.htm" target="_blank" rel="noopener noreferrer">新华网</a>）
+      </figcaption>
+    </figure>
+
+    <!-- 第三代 -->
+    <div class="panel-box reveal">
+      <h3><span class="mk">第三代</span> · 遗传工程雄性不育系：让杂交水稻实现"婚姻自由"</h3>
+      <p>以普通隐性核不育突变体为材料，转入含三个连锁元件的"遗传盒"：①野生型育性恢复基因；②花粉致死基因；③红色荧光标记基因。
+      转基因保持系自交产生 1:1 两种种子——不发荧光的非转基因种子即不育系，发荧光的转基因种子为保持系，用色选机即可分离。</p>
+      <div class="gen-grid">
+        <div class="gen g1">
+          <div class="gen-no">2019 · 衡南</div>
+          <h4>叁优一号 1046.3 公斤</h4>
+          <ul><li>第三代晚稻首破千公斤</li><li>全生育期约 125 天</li></ul>
+        </div>
+        <div class="gen g2">
+          <div class="gen-no">2020–2021 · 衡南</div>
+          <h4>双季亩产破 1600 公斤</h4>
+          <ul><li>2020 年双季 1530.76 公斤</li><li>2021 年达 1603.9 公斤</li></ul>
+        </div>
+        <div class="gen g3">
+          <div class="gen-no">2026 · 走向推广</div>
+          <h4>制种 200–300 公斤/亩</h4>
+          <ul><li>稻谷稳定亩产千公斤</li><li>就地制种、降低购种成本成为可能</li></ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>转基因安全界定（教学重点）：</strong>转基因仅用于繁殖保持系这一"中转"环节；
+        大田生产用的不育系种子和农民收获的稻谷<strong>都是非转基因的</strong>。
+        （<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10709537/" target="_blank" rel="noopener noreferrer">第三代技术综述 PMC10709537</a>；
+        <a href="https://www.news.cn/politics/20260522/5ef113d39b9f418f9ecd8c1df3bdb245/c.html" target="_blank" rel="noopener noreferrer">新华网 2026-05-22</a>）
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 伍·古今对照 ============ -->
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">伍</div>
+      <h2>四百年稻作技术古今对照</h2>
+      <p>纵向读一张表，可以清楚看到：哪些环节只换了工具，哪些环节已被科学重新定义。</p>
+    </div>
+    <div class="cmp-wrap reveal">
+      <table class="cmp">
+        <thead>
+          <tr><th scope="col">技术环节</th><th scope="col">《天工开物》古法（明代）</th><th scope="col">现代做法</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">种子来源</th><td class="col-old">农家自留种、田间选种，凭经验鉴别品种（粳/糯、米色、芒长）</td><td class="col-new">专业化育种与制种：三系/两系/第三代杂交种，种子企业生产、年年购种</td></tr>
+          <tr><th scope="row">增产核心</th><td class="col-old">改进栽培管理，充分发挥现有品种潜力</td><td class="col-new">杂种优势 + 遗传改良，从基因型层面提高产量上限</td></tr>
+          <tr><th scope="row">整地</th><td class="col-old">秋耕、秸秆还田、耕—耙—耖，畜力或人力</td><td class="col-new">机械耕整、旋耕搅浆、秸秆粉碎还田</td></tr>
+          <tr><th scope="row">施肥</th><td class="col-old">人畜粪、枯饼、绿肥、骨灰、石灰，看土看天施用</td><td class="col-new">测土配方施肥，化肥与有机肥配合，缓释肥、水肥一体化</td></tr>
+          <tr><th scope="row">除草</th><td class="col-old">足耔手耘，人工分辨稗、稊</td><td class="col-new">化学除草为主，辅以机械/生态除草，抗除草剂品种已应用</td></tr>
+          <tr><th scope="row">灌溉</th><td class="col-old">筒车、龙骨水车提水，凭经验定耗水量</td><td class="col-new">泵站与管道输水，浅湿干节水灌溉，按需水临界期调度</td></tr>
+          <tr><th scope="row">灾害应对</th><td class="col-old">防雀立假鹰、雪水浸种、湿谷炒糗等经验应急</td><td class="col-new">病虫测报与综合防治、抗逆品种、保险与机械化烘干</td></tr>
+          <tr><th scope="row">种植边界</th><td class="col-old">记录旱稻可上高山，靠品种适应扩边</td><td class="col-new">耐盐碱水稻、抗旱稻，向盐碱地、滩涂、沙漠要耕地</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 陆·前沿 ============ -->
+<section id="frontier" class="band-alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">陆</div>
+      <h2>今天的稻作：向滩涂、沙漠和污染地要粮</h2>
+      <p></p>
+    </div>
+
+    <div class="spark-grid">
+      <div class="spark reveal" style="background:var(--paper);">
+        <div class="ic" style="background:rgba(63,107,74,.12);color:var(--jade);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-3 6-3 9 0s6 3 9 0"/><path d="M3 17c3-3 6-3 9 0s6 3 9 0"/><path d="M3 7c3-3 6-3 9 0s6 3 9 0"/></svg>
+        </div>
+        <div>
+          <h4>耐盐碱水稻（俗称"海水稻"）<span style="font-size:.72em;font-weight:400;">👉 <a href="#case-jingan">静安二模·海水稻练习</a></span></h4>
+          <p>"海水稻"并非用海水直接灌溉，而是能在一定含盐量盐碱地正常结实的水稻，稻米不咸。
+          我国约 1 亿亩盐碱地具备种稻条件，目标是"再造一亿亩良田"。青岛中心独创"四维改良法"，迪拜沙漠试种成功；
+          截至 2025 年已有 23 个品种通过国审，推广超百万亩。
+          （<a href="https://m.dzplus.dzng.com/share/general/0/NEWS3400726SVIRHUDSWVYEX" target="_blank" rel="noopener noreferrer">大众新闻</a>；
+          <a href="https://news.cctv.com/2018/08/14/ARTIcQu1g6AjEudXC7Lkv0MO180814.shtml" target="_blank" rel="noopener noreferrer">央视网</a>）</p>
+        </div>
+      </div>
+      <div class="spark reveal" style="background:var(--paper);">
+        <div class="ic" style="background:rgba(168,58,42,.1);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a83a2a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3 L3 20 h18 z"/><path d="M9 14h6"/></svg>
+        </div>
+        <div>
+          <h4>箐两优3261：重度盐渍地的新纪录</h4>
+          <p>国家耐盐碱水稻技术创新中心培育，2024 年审定并入选国家农作物优良品种推广目录，
+          把 3‰–5‰ 盐碱地亩产底线从 300 公斤抬到 400 公斤；2026 年 6 月在海南乐东 10‰ 以上重度盐渍地百亩片亩产 476.69 公斤。
+          （<a href="https://www.news.cn/politics/20260522/5ef113d39b9f418f9ecd8c1df3bdb245/c.html" target="_blank" rel="noopener noreferrer">新华网</a>；
+          <a href="http://satr.hunaas.cn/mobile/xwbd/1558.html" target="_blank" rel="noopener noreferrer">国家耐盐碱中心</a>）</p>
+        </div>
+      </div>
+      <div class="spark reveal" style="background:var(--paper);grid-column:1/-1;">
+        <div class="ic" style="background:rgba(166,124,46,.14);color:var(--gold);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a67c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div>
+          <h4>低镉水稻：生物技术服务食品安全</h4>
+          <p>针对部分地区土壤重金属污染导致的"镉米"问题，湖南团队通过基因编辑与重离子诱变定向育种，育成全球首个大面积推广的低镉杂交稻"臻两优8612"：
+          2023 年在湖南 52 个区县推广 107 万亩，稻谷镉平均含量仅 0.0213 mg/kg，远低于 0.2 mg/kg 国家标准，并入选 2025 年度超级稻。
+          2023–2025 年全国低镉水稻累计种植超 700 万亩。
+          （<a href="http://mrdx.cn/h5/mrdx/content/20260521/Articel08003NR.htm" target="_blank" rel="noopener noreferrer">新华每日电讯</a>；
+          <a href="https://www.natesc.org.cn/admin/UeditorUploadFiles/file/20250331/6387900849858691419765360.pdf" target="_blank" rel="noopener noreferrer">全国农技中心</a>）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 年表 ============ -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">附</div>
+      <h2>中国杂交水稻关键里程碑</h2>
+      <p>每一个年份背后，都是一群人和无数次田间试验。完整年表见配套文档《现代杂交水稻技术资料.md》。</p>
+    </div>
+    <ul class="timeline reveal">
+      <li><span class="ty">1964–1965</span>袁隆平检查几十万株稻穗，找到 6 株天然雄性不育株。</li>
+      <li><span class="ty">1966</span>发表《水稻的雄性不孕性》，正式提出"三系配套"设想。</li>
+      <li><span class="ty">1970</span>李必湖在海南发现"野败"，成为关键突破口。</li>
+      <li><span class="ty">1973</span>籼型杂交水稻三系配套成功；同年石明松发现光敏核不育株。</li>
+      <li><span class="ty">1976</span>杂交水稻大面积推广，中国首个产业化利用水稻杂种优势。</li>
+      <li><span class="ty">1995</span>两系法杂交水稻研究成功。</li>
+      <li><span class="ty">1996–2014</span>超级稻四期目标 700 / 800 / 900 / 1000 公斤先后实现。</li>
+      <li><span class="ty">2011</span>袁隆平领衔启动第三代杂交水稻研究。</li>
+      <li><span class="ty">2021</span>第三代双季亩产 1603.9 公斤；5 月 22 日袁隆平在长沙逝世。</li>
+      <li><span class="ty">2023</span>德昌粒两优8022 亩产 1251.5 公斤，刷新世界纪录。</li>
+      <li><span class="ty">2024–2026</span>耐盐碱品种审定推广，重度盐渍地亩产近 477 公斤；第三代制种 200–300 公斤/亩。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 思考 ============ -->
+<section id="think" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">拓展</div>
+      <h2>留给课堂的思考题</h2>
+      <p>点开题目查看思路提示，鼓励学生结合遗传学知识提出自己的答案。</p>
+    </div>
+    <div class="think-grid">
+      <details class="think reveal">
+        <summary>为什么种杂交水稻必须年年买种子，不能自己留种？</summary>
+        <p>杂种优势在 F₁ 代最强；F₁ 自交后基因重组，F₂ 出现性状分离，植株高低不齐、产量显著下降。这是孟德尔分离定律在农业中的直接体现。</p>
+      </details>
+      <details class="think reveal">
+        <summary>"土脉历时代而异，种性随水土而分"与现代遗传学怎样对照？</summary>
+        <p>前半句讲环境（土壤）变化，后半句讲品种对环境的适应与分化。可联系"表现型 = 基因型 + 环境"、变异与自然/人工选择来理解。</p>
+      </details>
+      <details class="think reveal">
+        <summary>"骨灰蘸秧根"为什么能增产？这说明了什么？</summary>
+        <p>骨灰含磷，磷促进根系发育与分蘖、提早成熟。冷浸田水温低、有效磷少，所以效果格外明显——说明四百年前的经验做法暗合矿质营养原理。</p>
+      </details>
+      <details class="think reveal">
+        <summary>"海水稻"能直接用海水灌溉吗？推广它有什么意义？</summary>
+        <p>不能。它是耐盐碱水稻的俗称，只能耐受一定含盐量。我国盐碱地面积巨大，推广耐盐碱稻等于在不与常规耕地争地的情况下"再造良田"，对粮食安全意义重大。</p>
+      </details>
+      <details class="think reveal">
+        <summary>第三代杂交水稻用了转基因技术，为什么说大田稻谷不是转基因的？</summary>
+        <p>转基因只存在于保持系、且转基因花粉被特异性致死；用于大田的不育系由非荧光种子选出，不含转基因，因此收获的稻谷也是非转基因的。</p>
+      </details>
+      <details class="think reveal">
+        <summary>未来能让"杂种优势代代遗传"、不再年年制种吗？</summary>
+        <p>这正是"一系法"——无融合生殖（Apomixis）的研究方向：让植物不经受精、以种子方式克隆母本。目前已有实验室突破，距离生产应用仍有距离，是育种前沿课题。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 练习 ============ -->
+<section id="practice" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">练</div>
+      <h2>中考跨学科案例练习</h2>
+      <p>三个真实案例：虾稻共作、2023 金山一模、静安二模（海水稻）。建议先做题，再点开每题的"参考答案/要点"核对。材料据李老师提供的原卷整理，未附答案的开放题标注"言之成理即可"。</p>
+    </div>
+
+    <div class="case-list">
+      <!-- 案例一：虾稻共作 -->
+      <details class="case reveal" id="case-xiadao">
+        <summary>案例一 · 虾稻共作："水稻—小龙虾—中华鳖"综合养殖<span class="case-tag">生物综合 · 8 小题</span></summary>
+        <div class="case-body">
+          <div class="case-material">
+            <b>【材料】</b>上海郊区目前有"水稻—小龙虾—中华鳖"的综合养殖模式。小龙虾主要以稻田中的昆虫等为食；中华鳖（俗称甲鱼）以小龙虾为主要活饵料，可以控制小龙虾的过度繁殖。小龙虾和中华鳖在稻田中的活动可以帮助松土、增氧、施肥，大大促进水稻生长，它们的排泄物可以被水稻利用，从而改善了水环境，又有利于小龙虾和中华鳖的生长。
+          </div>
+          <ol class="qlist">
+            <li>水稻的学名是 <i>Oryza sativa</i>，其中 Oryza 是<u>　　　</u>（选填"属名"或"种名"）。
+              <details class="ans"><summary>参考要点（编者整理，原卷未附答案）</summary><p><b>属名。</b>双名法中第一部分为属名、第二部分为种加词，即 Oryza 为属名，sativa 为种加词。</p></details>
+            </li>
+            <li>小龙虾属于无脊椎动物，中华鳖属于脊椎动物，这样分类的依据是它们有无<u>　　　</u>。
+              <details class="ans"><summary>参考要点（编者整理）</summary><p><b>脊柱</b>（由脊椎骨构成的脊柱）。</p></details>
+            </li>
+            <li>观察和解剖小龙虾时，观察的顺序是<u>　　　</u>（写出一条即可），解剖时的注意事项是<u>　　　</u>（写出一条即可）。
+              <details class="ans"><summary>参考要点（编者整理）</summary><p>观察顺序：<b>由前到后（或由上到下、由表及里、先整体后局部）</b>。解剖注意：<b>剪刀头稍稍挑起以免损伤内部器官；沿腹面偏一侧剪开</b>等，任写一条合理即可。</p></details>
+            </li>
+            <li>小龙虾原产美洲，在我国为外来入侵生物。若稻田中的小龙虾得不到控制，在一段时间内其种群数量变化曲线可能是原卷图示中的<u>　　　</u>；在综合养殖模式的稻田中，小龙虾的数量变化曲线可能是<u>　　　</u>。（图示见原卷）
+              <details class="ans"><summary>参考要点（编者整理）</summary><p>无天敌、资源充足条件下近似<b>"J"形（指数）增长</b>；综合养殖中有中华鳖捕食制约，种群数量先增后趋于相对稳定，近似<b>"S"形增长（并在一定范围波动）</b>。具体对应原卷图中哪条曲线，请对照图示字母。</p></details>
+            </li>
+            <li>作为入侵物种，小龙虾的危害有<u>　　　</u>（写出一条即可）。为防止外来物种入侵，请提出一项建议<u>　　　</u>。
+              <details class="ans"><summary>参考要点（编者整理）</summary><p>危害：与本地物种竞争食物和空间、捕食本土生物破坏食物链、<b>打洞破坏农田/堤埂</b>、可能传播病原体等。建议：不随意放生或丢弃、加强引种审批与口岸检疫、开展人工清除或生物防治、加强宣传等。各任写一条合理即可。</p></details>
+            </li>
+            <li>生活在稻田里的所有生物及其环境，共同构成了一个<u>　　　</u>；其中杂草与水稻同时利用环境中的<u>　　　</u>等非生物因素（写出两项即可），两者间存在种间竞争关系。
+              <details class="ans"><summary>参考要点（编者整理）</summary><p><b>（稻田）生态系统</b>；非生物因素如<b>阳光、水、无机盐（矿质营养）、空间、温度</b>等，任写两项。</p></details>
+            </li>
+            <li>在"草→小龙虾→中华鳖"食物链中，下列能量由高到低排序正确的是<u>　　　</u>。<br>A. 草、小龙虾、中华鳖　B. 草、中华鳖、小龙虾　C. 中华鳖、草、小龙虾　D. 中华鳖、小龙虾、草
+              <details class="ans"><summary>参考要点（编者整理）</summary><p><b>A。</b>能量沿食物链单向流动、逐级递减，因此草 &gt; 小龙虾 &gt; 中华鳖。</p></details>
+            </li>
+            <li>上海属亚热带季风气候，夏季高温多雨；水稻喜高温、多湿。请结合气候特点和有关生物的生活习性，分析上海适合开展上述综合养殖模式的优势。
+              <details class="ans"><summary>参考要点（编者整理，开放题）</summary><p>上海夏季高温多雨、雨热同期，利于水稻生长，也为小龙虾提供浅水、温暖的栖息环境和大量昆虫饵料；中华鳖捕食小龙虾控制其数量，虾、鳖松土增氧、排泄物被水稻利用，水稻又净化水质，形成良性循环，稻虾鳖互利，生态与经济效益兼顾。言之成理即可。</p></details>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <!-- 案例二：金山一模 -->
+      <details class="case reveal" id="case-jinshan">
+        <summary>案例二 · 2023 金山区中考一模（跨学科·水稻与稻田养殖）<span class="case-tag">15 分 · 6 小题</span></summary>
+        <div class="case-body">
+          <div class="case-material">
+            <b>【材料节选】</b>水稻喜温喜湿。金山区 2021 年水稻种植面积占全部粮食作物的 97.6%，其中枫泾、亭林、朱泾镇占 54.3%；单季晚稻面积占 99.3%。部分乡镇依据生态经济学原理在稻田中养殖虾、蟹、鸭等，实现稻田生态系统良性循环并提高经济效益。<br>
+            2021 年金山区中、晚熟水稻品种种植面积（亩，节选）：秀水 114 <b>42367.27</b>、秀水 121 35330.21、秀水 134 25615、南粳 46 25371、金农香粳 1267 5287.2……（其余见原卷表 1）。<br>
+            稻田养殖（甲鱼、青虾）关系：害虫被青虾吃、害虫被甲鱼吃、小虾被甲鱼吃，排泄物作为水稻的肥料（原卷图 3）。
+          </div>
+          <ol class="qlist" start="42">
+            <li>金山区位于上海市的<u>　　　</u>（填方位）部，与<u>　　　</u>省相邻。（2 分）
+              <details class="ans"><summary>参考答案（原卷）</summary><p><b>西南；浙江。</b></p></details>
+            </li>
+            <li>根据表 1 等材料，金山区水稻种植面积最大的品种是<u>　　　</u>；亭林地区主要种植的水稻类型为<u>　　　</u>（选填"单季稻"或"双季稻"）。（2 分）
+              <details class="ans"><summary>参考答案（原卷）</summary><p><b>秀水 114；单季稻</b>（单季晚稻）。</p></details>
+            </li>
+            <li>根据金山区气候图分析，有利于水稻生长的气候条件为<u>　　　</u>（选填"夏季高温多雨"或"冬季温和少雨"）。（2 分）
+              <details class="ans"><summary>参考答案（原卷）</summary><p><b>夏季高温多雨。</b></p></details>
+            </li>
+            <li>下列表示稻田养殖模式下食物链正确的是（　）。（2 分）<br>A. 水稻→害虫→青虾→甲鱼　B. 甲鱼→青虾→害虫→水稻　C. 害虫→青虾→甲鱼→水稻
+              <details class="ans"><summary>参考答案（原卷）</summary><p><b>A。</b>食物链从生产者（水稻）开始，沿捕食关系逐级指向最高级消费者。</p></details>
+            </li>
+            <li>精白米口感软糯、易消化；糙米较粗糙、不易消化。糙米与精白米相比，还含有 B 族维生素、维生素 E、不饱和脂肪、微量元素和膳食纤维。如果你是家庭"煮妇/夫"，你将如何选择稻米类型？请表明观点并说明理由。（3 分）
+              <details class="ans"><summary>参考答案（原卷，观点 1 分＋理由 2 分）</summary><p>观点 1：<b>选精白米</b>——口感软糯好吃、易消化。<br>观点 2：<b>选糙米</b>——营养价值更高，B 族维生素、膳食纤维等更丰富，利于均衡营养与健康。<br>观点 3：<b>两者搭配着吃</b>——兼顾口感与营养。</p></details>
+            </li>
+            <li>请从<b>绿色生态</b>和<b>社会经济</b>两个角度，分析稻田养殖的优势。（4 分）
+              <details class="ans"><summary>参考答案（原卷，每个角度答一点、分析到位各 2 分）</summary><p><b>绿色生态：</b>水产、水禽的排泄物可作水稻肥料，减少化肥施用；它们捕食害虫、杂草，减少农药，利于生产绿色有机农产品、保护农田生态环境。<br><b>社会经济：</b>减少农药、化肥与饵料，降低生产成本；省却虾塘鱼塘租赁费用；一水多用、稻渔双收，增加农民收入，品质提升也能提高售价。</p></details>
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <!-- 案例三：静安二模 -->
+      <details class="case reveal" id="case-jingan">
+        <summary>案例三 · 静安区二模：向盐碱地要粮（"海水稻"）<span class="case-tag">15 分 · 6 小题</span></summary>
+        <div class="case-body">
+          <div class="case-material">
+            <b>【材料节选】</b>我国人均耕地不足 0.1 公顷，中低产田约占 2/3，盐碱地分布广泛。2018 年起袁隆平海水稻团队在新疆开辟试验田：试种地块含盐度约 1.8%、pH 8（重度盐碱地），三年测产每年稳定在 500 公斤以上，土壤含盐度降至约 0.3%、pH 降至 7.8。海水稻能在盐度低于 1%（一般 0.3%–0.6%）的灌溉水中正常生长，抗涝、抗盐碱、抗倒伏、抗病虫能力更强，矿物质和蛋白质含量较高。（另附中国盐碱地分布图、水稻小花结构图）<br>
+            <b>表：盐溶液浓度对水稻发芽率、芽长、根长、根数的影响</b>
+            <table class="mini-table">
+              <tr><th>NaCl 浓度 (g/L)</th><th>发芽率 %</th><th>芽长 cm</th><th>根长 cm</th><th>根数</th></tr>
+              <tr><td>0</td><td>97.83</td><td>5.57</td><td>10.28</td><td>7.54</td></tr>
+              <tr><td>6</td><td>95.41</td><td>4.12</td><td>8.03</td><td>6.21</td></tr>
+              <tr><td>9</td><td>83.16</td><td>2.50</td><td>4.37</td><td>4.28</td></tr>
+              <tr><td>12</td><td>51.25</td><td>1.81</td><td>1.92</td><td>2.35</td></tr>
+              <tr><td>15</td><td>37.42</td><td>0.87</td><td>0.43</td><td>1.23</td></tr>
+            </table>
+          </div>
+          <ol class="qlist">
+            <li>我们食用的大米主要属于水稻的哪个部分？（2 分）<br>A. 花被部分　B. 花蕊部分　C. 果实的果皮部分　D. 种子的胚乳部分
+              <details class="ans"><summary>参考答案（原卷）</summary><p><b>D。</b>大米主要是水稻种子（颖果）中储存营养的胚乳。</p></details>
+            </li>
+            <li>我国盐碱地主要分布在<u>　　　</u>、<u>　　　</u>、黄土高原以及东北平原。（2 分）<br>A. 西南、华北平原　B. 西南、内蒙古高原　C. 西北、华北平原　D. 西北、长江中下游平原
+              <details class="ans"><summary>参考答案（原卷）</summary><p><b>C。</b>西北、华北平原。</p></details>
+            </li>
+            <li>海水稻主要为闭合状态下自花传粉。若用海水稻与普通水稻杂交、获得具有海水稻特点的杂交稻，需提前去除普通水稻花的<u>　　　</u>。（1 分）
+              <details class="ans"><summary>参考答案（原卷答案空缺，编者补）</summary><p><b>雄蕊（花药）</b>。在花未开放前去雄，防止自花传粉，再授以海水稻的花粉。</p></details>
+            </li>
+            <li>根据上表数据，可以得出的实验结论是<u>　　　</u>。（2 分）
+              <details class="ans"><summary>参考答案（原卷＋编者补全表述）</summary><p>原卷要点为"不同浓度的盐溶液对水稻种子萌发的影响"。完整表述：<b>在实验范围内，随 NaCl 浓度升高，水稻种子的发芽率、芽长、根长和根数均逐渐下降；盐浓度越高，对种子萌发和幼苗生长的抑制作用越强。</b></p></details>
+            </li>
+            <li>你是否赞同在中国沿海滩涂（如上海南汇东滩）大面积推广"海水稻"？请表明态度并说明理由。（4 分）
+              <details class="ans"><summary>答题参考（原卷：答案合理即可）</summary><p><b>赞同方向：</b>滩涂种稻不占用现有耕地，可增加耕地与粮食产量，利于粮食安全；还能改良盐碱土壤。<br><b>不赞同/谨慎方向：</b>沿海滩涂是重要湿地，具调蓄、净化和生物栖息地功能（如候鸟栖息），大面积开垦会破坏湿地生态；也需考虑灌溉淡水成本与产量稳定性。态度明确、理由充分即可。</p></details>
+            </li>
+            <li>作为学生，面对粮食安全问题，我们可以做些什么？请说说想法，至少写 2 条。（4 分）
+              <details class="ans"><summary>答题参考（原卷：答案合理即可）</summary><p>如：践行"光盘行动"、珍惜节约粮食、不挑食不浪费；向身边人宣传节粮与粮食安全的重要性；关注农业科技、努力学习科学知识，将来投身育种与农业研究等。至少写出 2 条、合理即可。</p></details>
+            </li>
+          </ol>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 来源 ============ -->
+<section id="sources">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">据</div>
+      <h2>参考来源</h2>
+      <p>所有关键年份与数据均出自下列公开权威来源；古籍原文以两个底本互校，现代数据以政府部门、权威媒体与学术期刊为准。</p>
+    </div>
+    <div class="src-grid reveal">
+      <div class="grp-title">古籍底本</div>
+      <a href="http://agri-history.ihns.ac.cn/books/tgkwnl.htm" target="_blank" rel="noopener noreferrer">中科院自然科学史所·农业历史资料库《天工开物·乃粒》</a>
+      <a href="https://m.gushiwen.cn/guwen/bookv_6c1d48755d6a.aspx" target="_blank" rel="noopener noreferrer">古文岛（古诗文网）《天工开物·乃粒》标点本</a>
+
+      <div class="grp-title">政府部门与权威媒体</div>
+      <a href="https://zys.moa.gov.cn/mhsh/202104/t20210422_6366373.htm" target="_blank" rel="noopener noreferrer">农业农村部种业管理司：水稻种业的昨天、今天和明天</a>
+      <a href="https://szb.farmer.com.cn/2023/20231027/20231027_008/news-nmrb-12550-20231027-m-008-300.pdf" target="_blank" rel="noopener noreferrer">农民日报：中国杂交稻——半个世纪的禾下追梦</a>
+      <a href="https://news.gmw.cn/2019-10/07/content_33209942.htm" target="_blank" rel="noopener noreferrer">光明日报/新华社：攻克杂交水稻难关</a>
+      <a href="http://hunan.gov.cn/hnszf/hnyw/sy/hnyw1/202105/t20210523_19353742.html" target="_blank" rel="noopener noreferrer">湖南省政府：追忆袁隆平院士</a>
+      <a href="http://news.cnr.cn/kuaixun/20231014/t20231014_526451074.shtml" target="_blank" rel="noopener noreferrer">央广网：超级稻亩产 1251.5 公斤创世界纪录</a>
+      <a href="https://www.news.cn/politics/20260522/5ef113d39b9f418f9ecd8c1df3bdb245/c.html" target="_blank" rel="noopener noreferrer">新华网：杂交水稻研究多项阶段性成果（2026-05-22）</a>
+      <a href="http://mrdx.cn/h5/mrdx/content/20260521/Articel08003NR.htm" target="_blank" rel="noopener noreferrer">新华每日电讯：袁老师，我们来"交卷"了</a>
+      <a href="https://www.natesc.org.cn/admin/UeditorUploadFiles/file/20250331/6387900849858691419765360.pdf" target="_blank" rel="noopener noreferrer">全国农技中心：2025 年度超级稻确认品种通知</a>
+      <a href="http://satr.hunaas.cn/mobile/xwbd/1558.html" target="_blank" rel="noopener noreferrer">国家耐盐碱水稻技术创新中心（2026-09）</a>
+
+      <div class="grp-title">学术来源</div>
+      <a href="http://www.cemps.cas.cn/kyjz/kyjz2019_197017/202309/t20230907_6875131.html" target="_blank" rel="noopener noreferrer">中科院分子植物卓越中心：韩斌团队解析杂种优势遗传基础（Nature Genetics, 2023）</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8562580/" target="_blank" rel="noopener noreferrer">Plant Biotechnology：水稻细胞质雄性不育与育性恢复的分子基础</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10709537/" target="_blank" rel="noopener noreferrer">第三代杂交水稻技术综述（PMC10709537）</a>
+      <a href="https://academic.oup.com/gpb/article/16/6/393/7225039" target="_blank" rel="noopener noreferrer">Genomics Proteomics &amp; Bioinformatics：中国第三代杂交水稻</a>
+    </div>
+  </div>
+</section>
+
+<footer class="end">
+  <div class="serif-quote">"土脉历时代而异，种性随水土而分。"</div>
+  <div>教学知识网页 · 依据《天工开物·乃粒》原文整理与现代杂交水稻权威资料编制</div>
+  <div style="margin-top:.3rem;">配套文档：《天工开物_水稻原文整理.md》（53 条原文）·《现代杂交水稻技术资料.md》</div>
+</footer>
+
+<script>
+(function(){
+  try{
+    /* ---------- 七步切换 ---------- */
+    var dots = document.querySelectorAll('.step-dot');
+    var panels = document.querySelectorAll('.step-panel');
+    function showStep(n){
+      dots.forEach(function(d){
+        var on = d.getAttribute('data-step') === n;
+        d.classList.toggle('on', on);
+        d.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function(p){
+        p.classList.toggle('on', p.getAttribute('data-panel') === n);
+      });
+    }
+    dots.forEach(function(d){
+      d.addEventListener('click', function(){ showStep(d.getAttribute('data-step')); });
+    });
+
+    /* ---------- 鸭稻照片：在线源失败则回退本地文件 ---------- */
+    document.querySelectorAll('img[data-local]').forEach(function(img){
+      img.addEventListener('error', function(){
+        var local = img.getAttribute('data-local');
+        if(local && img.getAttribute('src') !== local){
+          img.setAttribute('src', local);
+        }
+      });
+    });
+
+    /* ---------- 滚动显现 ---------- */
+    var revealEls = document.querySelectorAll('.reveal');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce || !('IntersectionObserver' in window)){
+      revealEls.forEach(function(el){ el.classList.add('in'); });
+    }else{
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      },{threshold:.12});
+      revealEls.forEach(function(el){ io.observe(el); });
+    }
+
+    /* ---------- 导航高亮（scrollspy） ---------- */
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    var map = {};
+    navLinks.forEach(function(a){
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      if(sec){ map[id] = a; }
+    });
+    if('IntersectionObserver' in window){
+      var spy = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            navLinks.forEach(function(a){ a.classList.remove('active'); });
+            var link = map[e.target.id];
+            if(link){ link.classList.add('active'); }
+          }
+        });
+      },{rootMargin:'-45% 0px -50% 0px'});
+      Object.keys(map).forEach(function(id){
+        var sec = document.getElementById(id);
+        if(sec){ spy.observe(sec); }
+      });
+    }
+
+    /* ---------- 页内平滑滚动（拦截，确保兼容） ---------- */
+    navLinks.forEach(function(a){
+      a.addEventListener('click', function(ev){
+        var id = a.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if(target){
+          ev.preventDefault();
+          target.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+        }
+      });
+    });
+    /* ---------- 案例锚点：自动展开对应 details 并滚动 ---------- */
+    function openCaseFromHash(){
+      var h = location.hash;
+      if(!h || h.length < 2) return;
+      var el;
+      try{ el = document.querySelector(h); }catch(e){ return; }
+      if(!el) return;
+      if(el.tagName === 'DETAILS'){
+        el.open = true;
+        el.querySelectorAll('.reveal').forEach(function(r){ r.classList.add('in'); });
+      }
+      el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+    }
+    window.addEventListener('hashchange', openCaseFromHash);
+    openCaseFromHash();
+  }catch(err){
+    /* 脚本异常时静态内容仍完整可读 */
+  }
+})();
+</script>
+</body>
+</html>
